@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_154531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "timescaledb"
 
   create_table "assets", force: :cascade do |t|
     t.datetime "active_at"

@@ -6,3 +6,6 @@ AllCops:
     - '.git/**/*'
     - 'db/schema.rb'
     - 'db/migrate/*.rb'
+
+Style/Documentation:
+  Enabled: false
