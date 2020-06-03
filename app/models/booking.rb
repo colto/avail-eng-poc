@@ -13,7 +13,10 @@ class Booking < ApplicationRecord
   end
 
   private
+
   def start_and_end_overlap
+    return unless end_at && start_at
+
     errors.add(:end_at, 'must be after the start date') if end_at < start_at
   end
 end

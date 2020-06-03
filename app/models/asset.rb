@@ -11,7 +11,7 @@ class Asset < ApplicationRecord
   private
 
   def active_and_inactive_overlap
-    return if inactive_at.blank?
+    return unless inactive_at && active_at
 
     errors.add(:inactive_at, 'must be after the active date') if inactive_at < active_at
   end

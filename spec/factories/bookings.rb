@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :booking do
-    start_at { "2020-05-28 08:45:31" }
-    end_at { "2020-05-28 08:45:31" }
+    start_at { DateTime.now }
+    end_at { DateTime.now + 5.days }
   end
 end
