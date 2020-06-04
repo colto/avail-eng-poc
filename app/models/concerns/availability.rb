@@ -4,7 +4,7 @@ module Availability
   extend ActiveSupport::Concern
 
   def availablility
-    available_asset_count - bookings_count
+    available_asset_count - booking_count
   end
 
   def available?

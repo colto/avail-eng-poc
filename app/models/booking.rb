@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validates :end_at, presence: true
   validate :start_and_end_overlap
 
-  scope :by_length, -> { order(Arel.sql('extract(EPOCH from end_at - start_at) DESC')) }
+  scope :by_start, -> { order(:start_at) }
   scope :for_time_period, ->(start_at, end_at) { where('start_at <= ? and end_at >= ?', end_at, start_at) }
 
   def overlap?(booking)

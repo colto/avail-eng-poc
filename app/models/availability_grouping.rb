@@ -19,7 +19,7 @@ class AvailabilityGrouping
   def booking_groups
     @booking_groups ||= begin
       groups = []
-      bookings.by_length.each do |ungrouped_booking|
+      bookings.by_start.each do |ungrouped_booking|
         placed = false
         groups.each do |grouping|
           grouping.each do |booking|
@@ -29,6 +29,7 @@ class AvailabilityGrouping
             grouping << ungrouped_booking
             placed = true
           end
+          break if placed
         end
         groups << [ungrouped_booking] unless placed
       end
